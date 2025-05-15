@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房源管理列表</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 管理後台導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">管理後台</a>
+            <div class="ms-auto">
+                <a href="#" class="btn btn-outline-light btn-sm">登出</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold mb-0">房源列表</h2>
+                <a href="admin-edit.html" class="btn btn-primary rounded-pill">+ 新增房源</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-middle table-hover bg-white rounded-4 overflow-hidden">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">圖片</th>
+                            <th scope="col">標題</th>
+                            <th scope="col">地點</th>
+                            <th scope="col">房型</th>
+                            <th scope="col">床型/床數</th>
+                            <th scope="col">衛浴</th>
+                            <th scope="col">價格</th>
+                            <th scope="col">狀態</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="assets/room01.jpg" alt="房源1" width="80" class="rounded-3"></td>
+                            <td>札幌中央區的酒店</td>
+                            <td>札幌市中央區</td>
+                            <td>雙人房</td>
+                            <td>1張單人床</td>
+                            <td>1</td>
+                            <td>¥4,680 / 晚</td>
+                            <td><span class="badge bg-success">上架中</span></td>
+                            <td><a href="admin-edit.html" class="btn btn-outline-primary btn-sm">編輯</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="assets/room02.jpg" alt="房源2" width="80" class="rounded-3"></td>
+                            <td>札幌的膠囊旅館</td>
+                            <td>札幌市北區</td>
+                            <td>膠囊</td>
+                            <td>1超大床墊</td>
+                            <td>共用</td>
+                            <td>¥3,300 / 晚</td>
+                            <td><span class="badge bg-secondary">下架</span></td>
+                            <td><a href="admin-edit.html" class="btn btn-outline-primary btn-sm">編輯</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="assets/room03.jpg" alt="房源3" width="80" class="rounded-3"></td>
+                            <td>札幌市的賓館</td>
+                            <td>札幌市東區</td>
+                            <td>套房</td>
+                            <td>1張雙人床</td>
+                            <td>1</td>
+                            <td>¥6,300 / 晚</td>
+                            <td><span class="badge bg-success">上架中</span></td>
+                            <td><a href="admin-edit.html" class="btn btn-outline-primary btn-sm">編輯</a></td>
+                        </tr>
+                        <tr>
+                            <td><img src="assets/room04.jpg" alt="房源4" width="80" class="rounded-3"></td>
+                            <td>札幌市的客房</td>
+                            <td>札幌市南區</td>
+                            <td>單人房</td>
+                            <td>1張單人床</td>
+                            <td>1</td>
+                            <td>¥4,300 / 晚</td>
+                            <td><span class="badge bg-success">上架中</span></td>
+                            <td><a href="admin-edit.html" class="btn btn-outline-primary btn-sm">編輯</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 

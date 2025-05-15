@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>編輯房源</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 管理後台導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="admin-list.html">管理後台</a>
+            <div class="ms-auto">
+                <a href="#" class="btn btn-outline-light btn-sm">登出</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-xl-6">
+                    <div class="card shadow-sm rounded-4 p-4">
+                        <h2 class="fw-bold mb-4 text-center">編輯房源</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">標題</label>
+                                <input type="text" class="form-control" value="札幌中央區的酒店">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">地點</label>
+                                <input type="text" class="form-control" value="札幌市中央區">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">房型</label>
+                                <input type="text" class="form-control" value="雙人房">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">床型/床數</label>
+                                <input type="text" class="form-control" value="1張單人床">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">衛浴數量</label>
+                                <input type="text" class="form-control" value="1">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">價格（每晚）</label>
+                                <input type="number" class="form-control" value="4680">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">主要設施</label>
+                                <div class="row g-2">
+                                    <div class="col-6 col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="wifi" checked>
+                                            <label class="form-check-label" for="wifi">WiFi</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="kitchen" checked>
+                                            <label class="form-check-label" for="kitchen">廚房</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="tv">
+                                            <label class="form-check-label" for="tv">電視</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="washer">
+                                            <label class="form-check-label" for="washer">洗衣機</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="ac">
+                                            <label class="form-check-label" for="ac">空調</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="hotwater">
+                                            <label class="form-check-label" for="hotwater">熱水</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">描述</label>
+                                <textarea class="form-control" rows="4">札幌中心部的舒適客房，交通便利，設施齊全。</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">主要圖片</label>
+                                <div class="mb-2">
+                                    <img src="assets/room01.jpg" alt="主要圖片" width="120" class="rounded-3 mb-2 d-block">
+                                </div>
+                                <input type="file" class="form-control">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">狀態</label>
+                                <select class="form-select">
+                                    <option selected>上架中</option>
+                                    <option>下架</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="admin-list.html" class="btn btn-outline-secondary">返回列表</a>
+                                <button type="submit" class="btn btn-primary">儲存</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html> 
