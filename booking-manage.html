@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>預訂管理</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css" rel="stylesheet">
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+    <style>
+        #calendar {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            padding: 16px;
+            min-height: 600px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .fc {
+            background: transparent;
+        }
+        .fc-toolbar-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .fc-daygrid-event {
+            border-radius: 6px;
+            font-size: 0.95rem;
+            padding: 2px 6px;
+        }
+        .fc-scrollgrid-section-header, .fc-scrollgrid-section-body {
+            border-radius: 12px;
+        }
+        .fc-daygrid-day-frame {
+            min-height: 80px;
+        }
+        .fc-daygrid-day-events {
+            margin-top: 4px;
+        }
+        .fc .fc-scrollgrid {
+            border-radius: 12px;
+        }
+        .fc-daygrid-day {
+            overflow: visible !important;
+        }
+        .fc-scroller {
+            overflow-y: visible !important;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="#FF5A5F">
+                    <path d="M16 3.5c-1.953 0-3.53 1.578-3.53 3.53 0 1.953 1.577 3.53 3.53 3.53 1.953 0 3.53-1.578 3.53-3.53 0-1.953-1.577-3.53-3.53-3.53zm0 9c-3.033 0-5.5-2.467-5.5-5.5s2.467-5.5 5.5-5.5 5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5zm0-14c-7.732 0-14 6.268-14 14 0 7.733 6.268 14 14 14 7.733 0 14-6.267 14-14 0-7.732-6.267-14-14-14zm0 29c-8.284 0-15-6.716-15-15 0-8.284 6.716-15 15-15 8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15z"/>
+                </svg>
+            </a>
+            <div class="d-flex d-lg-none ms-auto">
+                <button class="btn rounded-pill border px-3 me-2">
+                    <i class="fas fa-globe me-2"></i>
+                </button>
+                <button class="btn rounded-pill border d-flex align-items-center p-1 ps-2 pe-2">
+                    <i class="fas fa-bars me-2"></i>
+                    <i class="fas fa-user-circle fs-4"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">尋找住宿</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">關於我們</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div class="d-flex align-items-center mb-3">
+            <img id="room-img" src="assets/room01.jpg" alt="房源小圖" style="width:60px;height:60px;object-fit:cover;" class="rounded me-3">
+            <h4 id="room-title" class="mb-0 me-3">房源名稱</h4>
+            <button class="btn btn-primary ms-auto" data-bs-toggle="modal" data-bs-target="#bookingModal">新增預訂</button>
+        </div>
+        <div id="calendar"></div>
+    </div>
+    <!-- 新增預訂 Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1">
+      <div class="modal-dialog">
+        <form class="modal-content" id="bookingForm">
+          <div class="modal-header">
+            <h5 class="modal-title">新增預訂</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">客人姓名</label>
+              <input type="text" class="form-control" name="guest" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">電話</label>
+              <input type="tel" class="form-control" name="phone" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">預定起始日期</label>
+              <input type="date" class="form-control" name="start" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">預定結束日期</label>
+              <input type="date" class="form-control" name="end" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">儲存</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- 顯示預訂資訊 Modal -->
+    <div class="modal fade" id="viewBookingModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">預訂資訊</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>客人姓名：</strong><span id="viewBookingName"></span></p>
+            <p><strong>電話：</strong><span id="viewBookingPhone"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+    <!-- Bootstrap 5 JS 和 Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <script>
+    // 假資料：房源資訊與預訂
+    const roomData = {
+      '1': { title: '札幌中央區的酒店', img: 'assets/room01.jpg' },
+      '2': { title: '札幌的膠囊旅館', img: 'assets/room02.jpg' },
+      '3': { title: '札幌市的賓館', img: 'assets/room03.jpg' }
+    };
+    // 取得房源ID
+    const urlParams = new URLSearchParams(window.location.search);
+    const roomId = urlParams.get('roomId') || '1';
+    const room = roomData[roomId] || roomData['1'];
+
+    // 產生 6 月和 7 月各三筆預設預訂
+    function getDefaultBookings() {
+      const today = new Date();
+      const year = today.getFullYear();
+      // 6 月
+      const bookings = [];
+      const guests = ['王小明', '陳美麗', '李大仁'];
+      const phones = ['0912345678', '0987654321', '0922333444'];
+      [5, 6].forEach(month => { // 5=6月, 6=7月
+        [1, 10, 20].forEach((d, i) => {
+          const start = new Date(year, month, d);
+          const end = new Date(year, month, d + 1);
+          bookings.push({
+            title: guests[i],
+            start: start.toISOString().slice(0,10),
+            end: end.toISOString().slice(0,10),
+            extendedProps: { phone: phones[i] }
+          });
+        });
+      });
+      return bookings;
+    }
+    const bookings = getDefaultBookings();
+
+    // 設定房源資訊
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('room-title').textContent = room.title;
+      document.getElementById('room-img').src = room.img;
+      // FullCalendar 初始化
+      window.calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+        initialView: 'dayGridMonth',
+        locale: 'zh-tw',
+        height: 'auto',
+        contentHeight: 'auto',
+        aspectRatio: 1.5,
+        events: bookings,
+        eventColor: '#6c757d',
+        eventDisplay: 'block',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: ''
+        },
+        buttonText: {
+          today: '今天'
+        },
+        eventContent: function(arg) {
+          // 顯示客人姓名
+          return { html: `<b>${arg.event.title}</b>` };
+        },
+        eventClick: function(info) {
+          document.getElementById('viewBookingName').textContent = info.event.title;
+          document.getElementById('viewBookingPhone').textContent = info.event.extendedProps.phone || '';
+          var viewModal = new bootstrap.Modal(document.getElementById('viewBookingModal'));
+          viewModal.show();
+        }
+      });
+      window.calendar.render();
+    });
+    // 新增預訂
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const guest = form.guest.value;
+      const phone = form.phone.value;
+      const start = form.start.value;
+      const end = form.end.value;
+      // FullCalendar 的 end 日期為不含當天，需+1天
+      const endDate = new Date(end);
+      endDate.setDate(endDate.getDate() + 1);
+      window.calendar.addEvent({
+        title: guest,
+        start: start,
+        end: endDate.toISOString().slice(0,10),
+        extendedProps: { phone }
+      });
+      // 關閉 modal
+      var modal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
+      modal.hide();
+      form.reset();
+    });
+    </script>
+</body>
+</html> 
