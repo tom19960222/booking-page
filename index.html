@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>預訂頁面</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css" rel="stylesheet">
+    <!-- 自定義 CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="#FF5A5F">
+                    <path d="M16 3.5c-1.953 0-3.53 1.578-3.53 3.53 0 1.953 1.577 3.53 3.53 3.53 1.953 0 3.53-1.578 3.53-3.53 0-1.953-1.577-3.53-3.53-3.53zm0 9c-3.033 0-5.5-2.467-5.5-5.5s2.467-5.5 5.5-5.5 5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5zm0-14c-7.732 0-14 6.268-14 14 0 7.733 6.268 14 14 14 7.733 0 14-6.267 14-14 0-7.732-6.267-14-14-14zm0 29c-8.284 0-15-6.716-15-15 0-8.284 6.716-15 15-15 8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15z"/>
+                </svg>
+            </a>
+            
+            <div class="d-flex d-lg-none ms-auto">
+                <button class="btn rounded-pill border px-3 me-2">
+                    <i class="fas fa-globe me-2"></i>
+                </button>
+                <button class="btn rounded-pill border d-flex align-items-center p-1 ps-2 pe-2">
+                    <i class="fas fa-bars me-2"></i>
+                    <i class="fas fa-user-circle fs-4"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">尋找住宿</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">關於我們</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 篩選器 -->
+    <div class="filter-bar py-3 border-bottom overflow-auto">
+        <div class="container">
+            <div class="d-flex flex-nowrap">
+                <button class="btn btn-sm me-3 border rounded-pill px-3 py-2">
+                    <i class="fas fa-sliders-h me-2"></i>篩選條件
+                </button>
+                <button class="btn btn-sm me-3 border rounded-pill px-3 py-2">
+                    台北市
+                </button>
+                <button class="btn btn-sm me-3 border rounded-pill px-3 py-2">
+                    新北市
+                </button>
+                <button class="btn btn-sm me-3 border rounded-pill px-3 py-2">
+                    台中市
+                </button>
+                <button class="btn btn-sm me-3 border rounded-pill px-3 py-2">
+                    台南市
+                </button>
+                <button class="btn btn-sm me-3 border rounded-pill px-3 py-2">
+                    高雄市
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要內容 -->
+    <main class="py-4">
+        <div class="container">
+
+            <div class="row">
+                <!-- 房源 1 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room01.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.63
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌中央區的酒店</h6>
+                            <p class="card-text text-muted small mb-1">札幌中心部的舒適客房</p>
+                            <p class="card-text text-muted small mb-3">1張單人床</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥4,680</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- 房源 2 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room02.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.59
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌的膠囊旅館</h6>
+                            <p class="card-text text-muted small mb-1">現代化膠囊 | 1㎡ | 床墊超大</p>
+                            <p class="card-text text-muted small mb-3">高速WiFi和舒適環境</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥3,300</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- 房源 3 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room03.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.76
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌市的賓館</h6>
+                            <p class="card-text text-muted small mb-1">雙人房（附專用浴室）</p>
+                            <p class="card-text text-muted small mb-3">寬敞明亮的環境</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥6,300</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- 房源 4 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room01.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.53
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌市的客房</h6>
+                            <p class="card-text text-muted small mb-1">便利位置、安靜街區</p>
+                            <p class="card-text text-muted small mb-3">提供早餐、無線網絡</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥4,300</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- 房源 5 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room02.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.82
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌北區獨立公寓</h6>
+                            <p class="card-text text-muted small mb-1">地鐵站附近、完全獨立</p>
+                            <p class="card-text text-muted small mb-3">廚房設備齊全</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥5,500</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- 房源 6 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room03.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.67
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌市中心工作室</h6>
+                            <p class="card-text text-muted small mb-1">交通便利、時尚裝修</p>
+                            <p class="card-text text-muted small mb-3">適合商務旅行</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥4,800</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- 房源 7 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room01.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.58
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌站旁經濟型住宿</h6>
+                            <p class="card-text text-muted small mb-1">步行5分鐘到札幌站</p>
+                            <p class="card-text text-muted small mb-3">乾淨整潔的環境</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥3,800</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <!-- 房源 8 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <a href="listing.html" class="text-decoration-none text-dark">
+                    <div class="card border-0 h-100">
+                        <div class="position-relative">
+                            <img src="assets/room02.jpg" class="card-img-top rounded-4" alt="住宿照片">
+                            <div class="position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-dark bg-opacity-75 px-2 py-1 rounded-pill">
+                                    <i class="fas fa-star me-1"></i>4.92
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body px-0 pt-3">
+                            <h6 class="card-title mb-1 fw-bold">札幌豪華套房</h6>
+                            <p class="card-text text-muted small mb-1">市中心景觀、高層建築</p>
+                            <p class="card-text text-muted small mb-3">24小時前台服務</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text mb-0"><strong>¥7,500</strong> / 晚</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 顯示更多按鈕 -->
+            <div class="text-center mt-4">
+                <button class="btn btn-dark rounded-pill px-4 py-2">
+                    顯示更多房源
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="py-4 bg-light mt-5 border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="small mb-0">&copy; 2023 預訂系統, Inc.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-decoration-none text-dark me-3">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-dark me-3">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-decoration-none text-dark">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS 和 Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+</body>
+</html>

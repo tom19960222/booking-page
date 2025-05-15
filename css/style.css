@@ -1,0 +1,167 @@
+/* 主要顏色 */
+:root {
+    --primary-color: #FF5A5F;
+    --primary-dark: #FF385C;
+    --text-muted: #717171;
+    --border-color: #DDDDDD;
+}
+
+body {
+    font-family: "Circular", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    color: #222222;
+}
+
+/* 導航欄樣式 */
+.navbar-brand svg {
+    fill: var(--primary-color);
+}
+
+.navbar {
+    height: 80px;
+}
+
+/* 搜索欄樣式 */
+.navbar .rounded-pill {
+    transition: box-shadow 0.2s ease;
+}
+
+.navbar .rounded-pill:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+/* 篩選器樣式 */
+.filter-bar {
+    white-space: nowrap;
+}
+
+.filter-bar .btn {
+    white-space: nowrap;
+    color: #222222;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.filter-bar .btn:hover {
+    border-color: #222222;
+    background-color: #f8f9fa;
+}
+
+/* 卡片樣式 */
+.card {
+    transition: transform 0.2s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card .far.fa-heart:hover {
+    color: var(--primary-color);
+}
+
+/* 心形按鈕樣式 */
+.card .position-absolute.top-0.end-0 {
+    background-color: transparent;
+    z-index: 1;
+}
+
+.card .far.fa-heart {
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+    transition: color 0.2s ease;
+}
+
+/* 評分徽章樣式 */
+.badge.bg-dark.bg-opacity-75 {
+    font-weight: normal;
+}
+
+/* 價格樣式 */
+.card-text strong {
+    font-weight: 600;
+}
+
+/* 顯示更多按鈕 */
+.btn-dark {
+    background-color: #222222;
+    border-color: #222222;
+    transition: all 0.2s ease;
+}
+
+.btn-dark:hover {
+    background-color: #000000;
+    transform: translateY(-1px);
+}
+
+/* 頁腳樣式 */
+footer a:hover {
+    text-decoration: underline !important;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .card-img-top {
+        height: 180px;
+    }
+    
+    /* 在手機螢幕上顯示兩列 */
+    .row > .col-md-6.col-lg-3 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 在超小螢幕上顯示一列 */
+    .row > .col-md-6.col-lg-3 {
+        width: 100%;
+    }
+    
+    .card-img-top {
+        height: 220px;
+    }
+    
+    .filter-bar .btn {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .navbar-brand svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* 自定義滾動條樣式 */
+.filter-bar::-webkit-scrollbar {
+    height: 0;
+    display: none;
+}
+
+/* 卡片輪播指示樣式 */
+.carousel-indicators {
+    margin-bottom: 0.5rem;
+}
+
+.carousel-indicators button {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+}
+
+/* 上下架構圖示樣式 */
+.fas, .far, .fab {
+    vertical-align: middle;
+} 
