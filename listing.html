@@ -6,6 +6,8 @@
     <title>房源詳情</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css" rel="stylesheet">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!-- 自定義 CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Font Awesome -->
@@ -232,11 +234,11 @@
                                 <div class="row g-0">
                                     <div class="col-6 p-3 border-end">
                                         <label class="form-label small fw-bold">入住日期</label>
-                                        <input type="text" class="form-control border-0 p-0" placeholder="2023/6/10" readonly>
+                                        <input type="text" id="check-in" class="form-control border-0 p-0 date-range" placeholder="選擇日期" readonly>
                                     </div>
                                     <div class="col-6 p-3">
                                         <label class="form-label small fw-bold">退房日期</label>
-                                        <input type="text" class="form-control border-0 p-0" placeholder="2023/6/15" readonly>
+                                        <input type="text" id="check-out" class="form-control border-0 p-0 date-range" placeholder="選擇日期" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -413,5 +415,40 @@
     <!-- Bootstrap 5 JS 和 Popper.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh-tw.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 設定不可選擇的日期
+            const disabledDates = [];
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            
+            // 生成未來 12 個月的禁用日期
+            for (let month = 0; month < 12; month++) {
+                const date1 = new Date(currentYear, month, 1);
+                const date10 = new Date(currentYear, month, 10);
+                const date20 = new Date(currentYear, month, 20);
+                disabledDates.push(date1, date10, date20);
+            }
+
+            // 初始化日期選擇器
+            const fp = flatpickr(".date-range", {
+                mode: "range",
+                dateFormat: "Y/m/d",
+                locale: "zh-tw",
+                minDate: "today",
+                disable: disabledDates,
+                onChange: function(selectedDates, dateStr, instance) {
+                    if (selectedDates.length === 2) {
+                        // 更新輸入框的值
+                        document.getElementById('check-in').value = selectedDates[0].toLocaleDateString('zh-TW');
+                        document.getElementById('check-out').value = selectedDates[1].toLocaleDateString('zh-TW');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
